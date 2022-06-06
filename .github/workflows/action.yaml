@@ -24,7 +24,7 @@ jobs:
       - name: Run PyInstaller
         run: |
           cd src
-          python -m PyInstaller main.spec
+          python -m pyinstaller main.spec
       - name: Create zip bundle
         run: |
             cd src
