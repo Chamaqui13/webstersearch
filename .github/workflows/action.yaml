@@ -28,6 +28,7 @@ jobs:
       - name: Create zip bundle
         run: |
             cd src
+            chmod -x main.py
             zip -r ../${{ github.sha }}.zip .
       - name: Archive artifact
         uses: actions/upload-artifact@v2
