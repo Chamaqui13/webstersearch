@@ -1,23 +1,7 @@
 
 import requests, json
 from requests.exceptions import HTTPError
-
-def is_list(mylist):
-  try:
-    lista = json.loads(mylist)
-  except ValueError as e:
-    return False
-  if type(lista) is list:
-    return True
-  else:
-      return False
-
-def is_json(myjson):
-  try:
-    json.loads(myjson)
-  except ValueError as e:
-    return False
-  return True
+from validation import *
 
 def webster_search(word, api_key):
     try:
@@ -27,9 +11,8 @@ def webster_search(word, api_key):
         #Check for the successful response
         response.raise_for_status()
         #return response.json()[0]
-    except requests.exceptions.HTTPError as err:
-        raise SystemExit(err)
-    except HTTPError as http_err:
+    except requests.exceptions.HTTPError as http_err:
+        raise SystemExit(http_err)
         print(f'HTTP error: {http_err}')
     except Exception as err:
         print(f'Error: {err}')
