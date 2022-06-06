@@ -21,6 +21,10 @@ jobs:
         run: |
             python -m pip install --upgrade pip
             if [ -f requirements.txt ]; then pip install -r requirements.txt -t .; fi
+      - name: Run PyInstaller
+        run: |
+          cd src
+          python -m PyInstaller main.spec
       - name: Create zip bundle
         run: |
             cd src
