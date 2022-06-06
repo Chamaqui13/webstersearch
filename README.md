@@ -7,4 +7,5 @@ Because is a simple python code it requires python 3.8 to be installed on the ma
 
 ## Usage On linux:
 cd src
+
 ./main.py <word_to_search> <api_key>
